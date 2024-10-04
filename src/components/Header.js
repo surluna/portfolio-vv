@@ -11,8 +11,9 @@ const Header = () => {
         alignItems: "center",
         backgroundColor: "rgb(15, 15, 15)",
         height: "4rem",
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-        borderBottom: "2px solid #f0f0f0",
+        boxShadow:
+          "0 4px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(255, 255, 255, 0.1)",
+        borderBottom: "2px solid rgba(255, 255, 255, 0.2)",
       }}
     >
       <div style={{ fontSize: "24px", fontWeight: "500", color: "#fff" }}>

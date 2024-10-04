@@ -6,7 +6,7 @@ const { Footer } = Layout;
 const PortfolioFooter = () => {
   return (
     <Footer style={{ textAlign: "center" }}>
-      ©2024 My Portfolio Created using Ant Design
+      ©2024 Vivien's Portfolio Created using Ant Design
     </Footer>
   );
 };

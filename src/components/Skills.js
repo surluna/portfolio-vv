@@ -19,13 +19,12 @@ const Skills = () => {
   const description = "";
 
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
+    <div style={{ textAlign: "left", padding: "50px" }}>
       <Title level={2}>What I can do</Title>
-
       {/* UI/UX Design Skills */}
-      <div style={{ margin: "50px 0" }}>
+      <div style={{ padding: "5rem 15rem", marginTop: "3rem" }}>
         <Steps
-          current={1}
+          current={4}
           progressDot={customDot}
           direction="horizontal"
           items={[
@@ -45,40 +44,56 @@ const Skills = () => {
               title: "CSS",
               description,
             },
-            {
-              title: "JAVASCRIPT",
-              description,
-            },
           ]}
         />
-        <Title level={3} style={{ marginTop: "30px" }}>
+        <Title level={3} style={{ marginTop: "4rem", textAlign: "center" }}>
           UI/UX DESIGN
         </Title>
       </div>
-
       {/* Full Stack Skills */}
-      <div style={{ margin: "50px 0" }}>
+      <div style={{ padding: "5rem 15rem" }}>
         <Steps
-          current={1}
+          current={5}
           progressDot={customDot}
           direction="horizontal"
           items={[
             {
-              title: "REACT",
-              description,
+              title: "JAVASCRIPT",
             },
             {
+              title: "REACT",
+            },
+            { title: "ANT DESIGN" },
+            {
               title: "NODE.JS",
-              description,
             },
             {
               title: "MONGODB",
-              description,
             },
           ]}
         />
-        <Title level={3} style={{ marginTop: "30px" }}>
-          FULL STACK
+        <Title level={3} style={{ marginTop: "4rem", textAlign: "center" }}>
+          WEBSITE DEVELOPMENT
+        </Title>
+      </div>
+      <div style={{ padding: "5rem 15rem" }}>
+        <Steps
+          current={4}
+          progressDot={customDot}
+          direction="horizontal"
+          items={[
+            {
+              title: "JAVA",
+            },
+            {
+              title: "ANDROID STUDIO",
+            },
+            { title: "PYTHON" },
+            { title: "MYSQL" },
+          ]}
+        />
+        <Title level={3} style={{ marginTop: "4rem", textAlign: "center" }}>
+          BACKEND DEVELOPMENT
         </Title>
       </div>
     </div>
