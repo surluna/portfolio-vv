@@ -1,6 +1,8 @@
 import React from "react";
 import { Popover, Steps, Typography } from "antd";
-
+import "../styles/input.css";
+import "../styles/output.css";
+import "../styles/index.css";
 const { Title } = Typography;
 
 const customDot = (dot, { status, index }) => (
@@ -19,8 +21,10 @@ const Skills = () => {
   const description = "";
 
   return (
-    <div style={{ textAlign: "left", padding: "50px" }}>
-      <Title level={2}>What I can do</Title>
+    <div style={{ textAlign: "left", padding: "4rem" }}>
+      <Title className="text-start text-3xl font-bold mt-4 mb-8 md:mb-12">
+        What I can do
+      </Title>
       {/* UI/UX Design Skills */}
       <div style={{ padding: "5rem 15rem", marginTop: "3rem" }}>
         <Steps
@@ -44,6 +48,10 @@ const Skills = () => {
               title: "CSS",
               description,
             },
+            {
+              title: "ANT DESIGN",
+              description,
+            },
           ]}
         />
         <Title level={3} style={{ marginTop: "4rem", textAlign: "center" }}>
@@ -58,15 +66,19 @@ const Skills = () => {
           direction="horizontal"
           items={[
             {
+              title: "GIT",
+            },
+            {
               title: "JAVASCRIPT",
             },
             {
               title: "REACT",
             },
-            { title: "ANT DESIGN" },
+
             {
               title: "NODE.JS",
             },
+            { title: "EXPRESS" },
             {
               title: "MONGODB",
             },

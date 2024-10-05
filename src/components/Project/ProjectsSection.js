@@ -1,21 +1,33 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Typography } from "antd";
 import ProjectCard from "./ProjectCard";
-
+import "../../styles/input.css";
+import "../../styles/output.css";
+import "tailwindcss/tailwind.css";
+const { Title } = Typography;
 const projectsData = [
   {
     id: 1,
-    title: "E-commerce platform",
+    title: "AutoJob",
     description: "An eco-friendly online shopping website",
-    image: "/images/projects/GreenShell.png",
+    image: "/assets/images/AutoJob.png",
+    gitUrl: "https://github.com/surluna/GreenShell",
+    previewUrl: "https://autojob.one/",
+  },
+  {
+    id: 2,
+    title: "GreenShell",
+    description: "An eco-friendly online shopping website",
+    image: "/assets/images/GreenShell.png",
     gitUrl: "https://github.com/surluna/GreenShell",
     previewUrl: "https://green-shell.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "DailyNote",
     description:
       "A full-stack note-taking application using node.js, express, and mongoDB",
-    image: "/images/projects/DailyNote.png",
+    image: "/assets/images/DailyNote.png",
     gitUrl: "https://github.com/surluna/app",
     previewUrl: "/",
   },
@@ -46,11 +58,14 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+    <section id="projects" style={{ marginBottom: "5rem", padding: "4rem" }}>
+      <Title
+        className="text-start text-3xl font-bold mt-4 mb-8 md:mb-12"
+        style={{ marginBottom: "4rem" }}
+      >
         My Projects
-      </h2>
-      <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
+      </Title>
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project, index) => (
           <li key={index}>
             <ProjectCard
@@ -60,6 +75,7 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              className="w-2"
             />
           </li>
         ))}

@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import "../styles/index.css";
 import { Layout, Row, Col, Typography, Button, Space } from "antd";
 import { TypeAnimation } from "react-type-animation";
 const { Title, Text } = Typography;

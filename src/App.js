@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "antd/dist/reset.css";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/input.css";
+import "./styles/output.css";
+import "./styles/index.css";
+import "tailwindcss/tailwind.css";
 import { Layout, ConfigProvider, theme } from "antd";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
