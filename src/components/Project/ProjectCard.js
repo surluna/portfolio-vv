@@ -26,7 +26,7 @@ const ProjectCard = ({ title, description, imgUrl, gitUrl, previewUrl }) => {
           rel="noopener noreferrer"
         >
           <EyeOutlined
-            className="h-40 w-40 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white"
+            className=" text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white"
             style={{ fontSize: "1.5rem" }}
           />
         </a>
