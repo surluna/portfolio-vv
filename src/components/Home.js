@@ -91,23 +91,15 @@ const App = () => {
             <Row gutter={16}>
               <Space size={"large"}>
                 <Button
-                  type="primary"
                   size="large"
                   style={{
                     padding: "1rem",
                     fontSize: isMobile ? "1rem" : "1.2rem",
+                    width: "150%",
                   }}
+                  onClick={window.open("/assets/Resume.pdf", "_blank")}
                 >
-                  Let's Start
-                </Button>
-                <Button
-                  size="large"
-                  style={{
-                    padding: "1rem",
-                    fontSize: isMobile ? "1rem" : "1.2rem",
-                  }}
-                >
-                  My Resume
+                  Download My Resume
                 </Button>
               </Space>
             </Row>
