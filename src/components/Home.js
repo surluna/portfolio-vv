@@ -1,21 +1,35 @@
-import React from "react";
-import "../styles/index.css";
+import React, { useEffect, useState } from "react";
 import { Layout, Row, Col, Typography, Button, Space } from "antd";
 import { TypeAnimation } from "react-type-animation";
+import "../styles/input.css";
+import "../styles/output.css";
+import "../styles/index.css";
+
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Content
-      className="home"
+      className="p-4"
       style={{
-        // backgroundColor: "#f0f2f5",
-        // backgroundImage: "url(/assets/images/bg.jpg)",
-        padding: "8rem",
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
+        padding: isMobile ? "2rem" : "8rem",
       }}
     >
       <Row justify="space-between" align="middle" style={{ width: "100%" }}>
@@ -29,21 +43,24 @@ const App = () => {
             height: "100%",
           }}
         >
-          <div style={{ flex: 6, marginBottom: "6rem" }}>
+          <div style={{ flex: 6, marginBottom: isMobile ? "2rem" : "6rem" }}>
             <Title
               level={2}
               style={{
-                fontSize: "4rem",
+                fontSize: isMobile ? "2rem" : "4rem",
               }}
             >
-              Hi, I am <span style={{ fontSize: "5rem" }}>Vivien Wee</span>
+              Hi, I am{" "}
+              <span style={{ fontSize: isMobile ? "3rem" : "5rem" }}>
+                Vivien Wee
+              </span>
             </Title>
 
             <Title
               level={3}
               style={{
                 marginBottom: "3.5rem",
-                fontSize: "4rem",
+                fontSize: isMobile ? "2.5rem" : "4rem",
                 marginTop: "0",
               }}
             >
@@ -65,8 +82,8 @@ const App = () => {
                 repeat={Infinity}
               />
             </Title>
-            <Text style={{ fontSize: "1.4rem" }}>
-              Welcome to my profolio, please feel free to explore.
+            <Text style={{ fontSize: isMobile ? "1rem" : "1.4rem" }}>
+              Welcome to my portfolio, please feel free to explore.
             </Text>
           </div>
 
@@ -76,13 +93,19 @@ const App = () => {
                 <Button
                   type="primary"
                   size="large"
-                  style={{ padding: "1.5rem", fontSize: "1.2rem" }}
+                  style={{
+                    padding: "1rem",
+                    fontSize: isMobile ? "1rem" : "1.2rem",
+                  }}
                 >
-                  Let’s Start
+                  Let's Start
                 </Button>
                 <Button
                   size="large"
-                  style={{ padding: "1.5rem", fontSize: "1.2rem" }}
+                  style={{
+                    padding: "1rem",
+                    fontSize: isMobile ? "1rem" : "1.2rem",
+                  }}
                 >
                   My Resume
                 </Button>
@@ -95,7 +118,10 @@ const App = () => {
           <img
             src="/assets/images/pic.jpg"
             alt="Vivien Wee"
-            style={{ width: "150%", maxWidth: "450px", borderRadius: "50%" }}
+            style={{
+              maxWidth: isMobile ? "80%" : "100%",
+              borderRadius: "50%",
+            }}
           />
         </Col>
       </Row>

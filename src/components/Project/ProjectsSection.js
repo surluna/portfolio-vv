@@ -12,7 +12,7 @@ const projectsData = [
     description:
       "A career website that streamlines the job search process in Australia. Built with React and Ant Design for the front end, allows users to filter opportunities and subscribe to email alerts.",
     image: "/assets/images/AutoJob.png",
-    gitUrl: "https://github.com/surluna/GreenShell",
+    gitUrl: "https://github.com/AutoJob-24S1",
     previewUrl: "https://autojob.one/",
   },
   {

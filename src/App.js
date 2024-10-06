@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "antd/dist/reset.css";
 import "./styles/App.css";
 import "./styles/input.css";
@@ -15,15 +15,18 @@ import Contact from "./components/Contact";
 
 const defaultData = {
   borderRadius: 6,
-  // colorPrimary: "rgb(15, 15, 15)",
-  // colorPrimaryBg: "blue",
 };
 
 const { Content } = Layout;
 
 function App() {
-  // `useState` 应该在函数组件内部
   const [data, setData] = useState(defaultData);
+
+  // 创建refs以获取各个部分的引用
+  const homeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <ConfigProvider
@@ -31,34 +34,35 @@ function App() {
         algorithm: theme.darkAlgorithm,
         token: {
           colorPrimary: "rgb(211, 210, 219)",
-          // colorPrimaryBg: "#130f40",
           borderRadius: data.borderRadius,
         },
       }}
     >
       <Layout
         style={{
-          // backgroundImage: " linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)",
-          // backgroundImage: "linear-gradient(60deg, #29323c 0%, #485563 100%)",
           backgroundImage:
             "linear-gradient(60deg, #29323c 0%, rgb(15, 15, 15) 100%)",
-
-          // background:
-          //   "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)",
-          // backgroundBlendMode: "multiply",
         }}
       >
-        <Header />
-        <Content
-          style={{
-            padding: "50px",
-            // backgroundImage: "url(/assets/images/bg.jpg)",
-          }}
-        >
-          <Home />
-          <Skills />
-          <Projects />
-          <Contact />
+        <Header
+          homeRef={homeRef}
+          skillsRef={skillsRef}
+          projectsRef={projectsRef}
+          contactRef={contactRef}
+        />
+        <Content style={{ padding: "50px" }}>
+          <div ref={homeRef}>
+            <Home />
+          </div>
+          <div ref={skillsRef}>
+            <Skills />
+          </div>
+          <div ref={projectsRef}>
+            <Projects />
+          </div>
+          <div ref={contactRef}>
+            <Contact />
+          </div>
         </Content>
         <Footer />
       </Layout>
