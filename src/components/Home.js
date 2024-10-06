@@ -43,7 +43,7 @@ const App = () => {
             height: "100%",
           }}
         >
-          <div style={{ flex: 6, marginBottom: isMobile ? "2rem" : "6rem" }}>
+          <div style={{ flex: 6, marginBottom: isMobile ? "2rem" : "4.5rem" }}>
             <Title
               level={2}
               style={{
