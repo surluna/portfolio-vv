@@ -51,7 +51,15 @@ const App = () => {
               }}
             >
               Hi, I am{" "}
-              <span style={{ fontSize: isMobile ? "3rem" : "5rem" }}>
+              <span
+                style={{
+                  fontSize: isMobile ? "3rem" : "5rem",
+                  background: "linear-gradient(60deg, white 0%, #c084fc 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 Vivien Wee
               </span>
             </Title>
@@ -95,11 +103,11 @@ const App = () => {
                   style={{
                     padding: "1rem",
                     fontSize: isMobile ? "1rem" : "1.2rem",
-                    width: "150%",
+                    width: "200%",
                   }}
-                  onClick={window.open("/assets/Resume.pdf", "_blank")}
+                  onClick={() => window.open("/assets/Resume.pdf", "_blank")}
                 >
-                  Download My Resume
+                  View My Resume
                 </Button>
               </Space>
             </Row>

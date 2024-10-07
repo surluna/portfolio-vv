@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "antd/dist/reset.css";
 import "./styles/App.css";
 import "./styles/input.css";
@@ -21,12 +21,51 @@ const { Content } = Layout;
 
 function App() {
   const [data, setData] = useState(defaultData);
+  const [visibleSections, setVisibleSections] = useState({
+    home: false,
+    skills: false,
+    projects: false,
+    contact: false,
+  });
 
-  // 创建refs以获取各个部分的引用
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSections((prev) => ({
+            ...prev,
+            [entry.target.id]: true,
+          }));
+        }
+      });
+    }, options);
+
+    const sections = [homeRef, skillsRef, projectsRef, contactRef];
+    sections.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const downloadResume = () => {
+    window.open("/assets/Resume.pdf", "_blank");
+  };
 
   return (
     <ConfigProvider
@@ -41,7 +80,7 @@ function App() {
       <Layout
         style={{
           backgroundImage:
-            "linear-gradient(60deg, #29323c 0%, rgb(15, 15, 15) 100%)",
+            "linear-gradient(60deg, rgb(90,52,125) 0%, rgb(15, 15, 15) 100%)",
         }}
       >
         <Header
@@ -51,16 +90,32 @@ function App() {
           contactRef={contactRef}
         />
         <Content style={{ padding: "50px" }}>
-          <div ref={homeRef}>
+          <div
+            ref={homeRef}
+            id="home"
+            className={`fade-in ${visibleSections.home ? "visible" : ""}`}
+          >
             <Home />
           </div>
-          <div ref={skillsRef}>
+          <div
+            ref={skillsRef}
+            id="skills"
+            className={`fade-in ${visibleSections.skills ? "visible" : ""}`}
+          >
             <Skills />
           </div>
-          <div ref={projectsRef}>
+          <div
+            ref={projectsRef}
+            id="projects"
+            className={`fade-in ${visibleSections.projects ? "visible" : ""}`}
+          >
             <Projects />
           </div>
-          <div ref={contactRef}>
+          <div
+            ref={contactRef}
+            id="contact"
+            className={`fade-in ${visibleSections.contact ? "visible" : ""}`}
+          >
             <Contact />
           </div>
         </Content>

@@ -117,6 +117,11 @@ const Contact = () => {
               type="primary"
               htmlType="submit"
               className="w-full h-10 mt-4"
+              style={{
+                background: "#c084fc",
+                border: "none",
+                fontSize: "1rem",
+              }}
             >
               Send Message
             </Button>
