@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Typography } from "antd";
+import { Typography, Row, Col } from "antd";
 import ProjectCard from "./ProjectCard";
 import "../../styles/input.css";
 import "../../styles/output.css";
@@ -60,18 +60,20 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section id="projects" style={{ marginBottom: "5rem", padding: "4rem" }}>
+    <section
+      id="projects"
+      style={{ marginBottom: "5rem", padding: "4rem 4rem" }}
+    >
       <Title
         className="text-start text-3xl font-bold mt-4 mb-8 md:mb-12"
         style={{ marginBottom: "4rem" }}
       >
         My Projects
       </Title>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <Row ref={ref} gutter={[48, 48]}>
         {projectsData.map((project, index) => (
-          <li key={index}>
+          <Col key={project.id} xs={24} md={index === 0 ? 24 : 12}>
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
@@ -79,9 +81,9 @@ const ProjectsSection = () => {
               previewUrl={project.previewUrl}
               className="w-2"
             />
-          </li>
+          </Col>
         ))}
-      </ul>
+      </Row>
     </section>
   );
 };
