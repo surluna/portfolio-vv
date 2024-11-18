@@ -42,7 +42,7 @@ const Skills = () => {
             progressDot={customDot}
             direction="horizontal"
             items={[
-              { title: "PHOTOSHOP", description },
+              { title: "CANVA", description },
               { title: "FIGMA", description },
               { title: "HTML", description },
               { title: "TAILWIND CSS", description },
@@ -82,8 +82,8 @@ const Skills = () => {
             items={[
               { title: "JAVASCRIPT" },
               { title: "REACT" },
+              { title: "NEXT.JS" },
               { title: "NODE.JS" },
-              { title: "EXPRESS" },
               { title: "MONGODB" },
             ]}
           />
