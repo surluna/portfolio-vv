@@ -14,6 +14,7 @@ const projectsData = [
     image: "/assets/images/AutoJob.png",
     gitUrl: "https://github.com/AutoJob-24S1",
     previewUrl: "https://autojob.one/",
+    isPrivate: false,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const projectsData = [
     image: "/assets/images/GreenShell.png",
     gitUrl: "https://github.com/surluna/GreenShell",
     previewUrl: "https://green-shell.vercel.app/",
+    isPrivate: false,
   },
   {
     id: 3,
@@ -30,8 +32,9 @@ const projectsData = [
     description:
       "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Node.js and Express for the backend, utilizing MongoDB for data persistence.",
     image: "/assets/images/DailyNote.png",
-    gitUrl: "https://github.com/surluna/app",
-    previewUrl: "/",
+    gitUrl: "https://github.com/surluna/daily-note-client",
+    previewUrl: "https://daily-note-client.vercel.app/",
+    isPrivate: false,
   },
 ];
 
