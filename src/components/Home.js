@@ -105,7 +105,9 @@ const App = () => {
                     fontSize: isMobile ? "1rem" : "1.2rem",
                     width: "200%",
                   }}
-                  onClick={() => window.open("/assets/Resume.pdf", "_blank")}
+                  onClick={() =>
+                    window.open("/assets/Resume_Vivien_Wee.pdf", "_blank")
+                  }
                 >
                   View My Resume
                 </Button>

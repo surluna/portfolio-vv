@@ -4,39 +4,8 @@ import ProjectCard from "./ProjectCard";
 import "../../styles/input.css";
 import "../../styles/output.css";
 import "tailwindcss/tailwind.css";
+import projectsData from "../../data/projectsData.json";
 const { Title } = Typography;
-const projectsData = [
-  {
-    id: 1,
-    title: "AutoJob",
-    description:
-      "A career website that streamlines the job search process in Australia. Built with React and Ant Design for the front end, allows users to filter opportunities and subscribe to email alerts.",
-    image: "/assets/images/AutoJob.png",
-    gitUrl: "https://github.com/AutoJob-24S1",
-    previewUrl: "https://autojob.one/",
-    isPrivate: false,
-  },
-  {
-    id: 2,
-    title: "GreenShell",
-    description:
-      "A UI design project showcasing a visually appealing interface for an eco-friendly product line. This project focuses on aesthetic and user experience elements, highlighting design principles.",
-    image: "/assets/images/GreenShell.png",
-    gitUrl: "https://github.com/surluna/GreenShell",
-    previewUrl: "https://green-shell.vercel.app/",
-    isPrivate: false,
-  },
-  {
-    id: 3,
-    title: "DailyNote",
-    description:
-      "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Node.js and Express for the backend, utilizing MongoDB for data persistence.",
-    image: "/assets/images/DailyNote.png",
-    gitUrl: "https://github.com/surluna/daily-note-client",
-    previewUrl: "https://my-daily-note.vercel.app/",
-    isPrivate: false,
-  },
-];
 
 const ProjectsSection = () => {
   const [isInView, setIsInView] = useState(false);
@@ -75,7 +44,7 @@ const ProjectsSection = () => {
       </Title>
       <Row ref={ref} gutter={[48, 48]}>
         {projectsData.map((project, index) => (
-          <Col key={project.id} xs={24} md={index === 0 ? 24 : 12}>
+          <Col key={project.id} xs={24} md={12}>
             <ProjectCard
               title={project.title}
               description={project.description}
