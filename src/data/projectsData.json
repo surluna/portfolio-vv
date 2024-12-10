@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "TidyTeddy",
-    "description": "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Node.js and Express for the backend, utilizing MongoDB for data persistence.",
+    "description": "The TidyTeddy website was designed with a focus on user-friendly UI/UX to streamline booking organising, cleaning, packing, and moving services in Sydney.",
     "image": "/assets/images/TidyTeddy.png",
     "gitUrl": "",
     "previewUrl": "https://tidyteddy.com.au/",

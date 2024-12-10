@@ -4,6 +4,7 @@ import { Tooltip } from "antd";
 import "tailwindcss/tailwind.css";
 import "../../styles/input.css";
 import "../../styles/output.css";
+
 const ProjectCard = ({
   title,
   description,
@@ -38,17 +39,28 @@ const ProjectCard = ({
             />
           </a>
         )}
-        <a
-          href={previewUrl}
-          className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <EyeOutlined
-            className="text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white"
-            style={{ fontSize: "1.5rem" }}
-          />
-        </a>
+        {isPrivate ? (
+          <Tooltip title="Preview not available for private projects">
+            <div className="h-14 w-14 border-2 relative rounded-full border-gray-600">
+              <EyeOutlined
+                className="text-gray-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-not-allowed"
+                style={{ fontSize: "1.5rem" }}
+              />
+            </div>
+          </Tooltip>
+        ) : (
+          <a
+            href={previewUrl}
+            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EyeOutlined
+              className="text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white"
+              style={{ fontSize: "1.5rem" }}
+            />
+          </a>
+        )}
       </div>
       <div className="p-4">
         <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
