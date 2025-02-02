@@ -10,15 +10,6 @@
   },
   {
     "id": 2,
-    "title": "TidyTeddy",
-    "description": "The TidyTeddy website was designed with a focus on user-friendly UI/UX to streamline booking organising, cleaning, packing, and moving services in Sydney.",
-    "image": "/assets/images/TidyTeddy.png",
-    "gitUrl": "",
-    "previewUrl": "https://tidyteddy.com.au/",
-    "isPrivate": true
-  },
-  {
-    "id": 3,
     "title": "GreenShell",
     "description": "A UI design project showcasing a visually appealing interface for an eco-friendly product line. This project focuses on aesthetic and user experience elements, highlighting design principles.",
     "image": "/assets/images/GreenShell.png",
@@ -27,7 +18,7 @@
     "isPrivate": false
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "DailyNote",
     "description": "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Node.js and Express for the backend, utilizing MongoDB for data persistence.",
     "image": "/assets/images/DailyNote.png",
