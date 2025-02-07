@@ -30,10 +30,10 @@ const projectsData = [
     id: 3,
     title: "DailyNote",
     description:
-      "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Node.js and Express for the backend, utilizing MongoDB for data persistence.",
+      "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Next.js and TypeScript for the language, utilizing MongoDB for data persistence.",
     image: "/assets/images/DailyNote.png",
-    gitUrl: "https://github.com/surluna/daily-note-client",
-    previewUrl: "https://my-daily-note.vercel.app/",
+    gitUrl: "https://github.com/surluna/daily-note-react",
+    previewUrl: "https://vv-notes-c7a04181585e.herokuapp.com/",
     isPrivate: false,
   },
 ];
