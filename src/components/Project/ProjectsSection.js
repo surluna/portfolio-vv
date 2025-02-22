@@ -18,6 +18,16 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "TidyTeddy",
+    description:
+      "The TidyTeddy website was designed with a focus on user-friendly UI/UX to streamline booking organising, cleaning, packing, and moving services in Sydney.",
+    image: "/assets/images/TidyTeddy.png",
+    gitUrl: "",
+    previewUrl: "https://tidyteddy.com.au/",
+    isPrivate: true,
+  },
+  {
+    id: 2,
     title: "GreenShell",
     description:
       "A UI design project showcasing a visually appealing interface for an eco-friendly product line. This project focuses on aesthetic and user experience elements, highlighting design principles.",
@@ -33,7 +43,7 @@ const projectsData = [
       "A full-stack note-taking application that helps users jot down their thoughts and tasks effortlessly. Constructed with Next.js and TypeScript for the language, utilizing MongoDB for data persistence.",
     image: "/assets/images/DailyNote.png",
     gitUrl: "https://github.com/surluna/daily-note-react",
-    previewUrl: "https://vv-notes-c7a04181585e.herokuapp.com/",
+    previewUrl: "https://v0-new-project-sjacsjrc5tu.vercel.app/",
     isPrivate: false,
   },
 ];
@@ -75,7 +85,8 @@ const ProjectsSection = () => {
       </Title>
       <Row ref={ref} gutter={[48, 48]}>
         {projectsData.map((project, index) => (
-          <Col key={project.id} xs={24} md={index === 0 ? 24 : 12}>
+          // <Col key={project.id} xs={24} md={index === 0 ? 24 : 12}>
+          <Col key={project.id} xs={24} md={12}>
             <ProjectCard
               title={project.title}
               description={project.description}
